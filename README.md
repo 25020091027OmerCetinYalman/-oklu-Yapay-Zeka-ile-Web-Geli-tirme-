@@ -24,10 +24,10 @@ Aşağıdaki tabloda, projenin her bir aşamasında kullanılan araçların deta
 
 | # | Sunum Konusu | İzleme Bağlantısı |
 | :--- | :--- | :--- |
-| 1 | **Claude AI** ile Tasarım ve Kodlama | [Videoyu İzle 🔗] | https://youtu.be/JB1JPWAhosU
-| 2 | **Cursor Editor** ile Kod Geliştirme | [Videoyu İzle 🔗] https://youtu.be/3DvCM5u45X4
-| 3 | **Gemini** ile Tasarım Bileşenleri | [Videoyu İzle 🔗] https://youtu.be/Tvr5k2y05f8
-| 4 | **Final Sunumu** (Antigravity UI) | [Videoyu İzle 🔗] https://youtu.be/NpaZx1WLc4E
+| 1 | **Claude AI** ile Tasarım ve Kodlama | [Videoyu İzle 🔗]  (https://youtu.be/JB1JPWAhosU)
+| 2 | **Cursor Editor** ile Kod Geliştirme | [Videoyu İzle 🔗] (https://youtu.be/3DvCM5u45X4)
+| 3 | **Gemini** ile Tasarım Bileşenleri | [Videoyu İzle 🔗] (https://youtu.be/Tvr5k2y05f8)
+| 4 | **Final Sunumu** (Antigravity UI) | [Videoyu İzle 🔗] (https://youtu.be/NpaZx1WLc4E)
 
 ---
 
