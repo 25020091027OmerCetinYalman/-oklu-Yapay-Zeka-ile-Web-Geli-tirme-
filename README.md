@@ -5,7 +5,7 @@
 **Üniversite:** Kahramanmaraş İstiklal Üniversitesi  
 **Bölüm:** Yazılım Mühendisliği  
 **Ders:** Web Tasarımı ve Programlama  
-**Danışman:** Dr. Öğr. Üyesi İbrahim ARUK
+**Danışman:** Dr. Öğr. Üyesi Uğur Demiroğlu
 
 ---
 
