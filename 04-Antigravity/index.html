@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ömer Çetin Yalman - Profile Card</title>
+    <!-- Modern Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #1a2332;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --primary-gold: #d4af37;
+            --text-light: #f5f5f5;
+            --text-gray: #b0b0b0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-light);
+            /* Add some ambient glow shapes to enhance the glass effect */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ambient background blobs */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(90px);
+        }
+        
+        body::before {
+            width: 500px;
+            height: 500px;
+            background: rgba(40, 80, 150, 0.4);
+            top: -150px;
+            left: -150px;
+            animation: float-1 10s ease-in-out infinite alternate;
+        }
+        
+        body::after {
+            width: 400px;
+            height: 400px;
+            background: rgba(212, 175, 55, 0.15); /* Subtle gold glow */
+            bottom: -50px;
+            right: -100px;
+            animation: float-2 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes float-1 {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(50px) scale(1.1); }
+        }
+
+        @keyframes float-2 {
+            0% { transform: translateX(0px) scale(1); }
+            100% { transform: translateX(-50px) scale(1.05); }
+        }
+
+        /* Glassmorphism Card Container */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Inner Elements */
+        .logo {
+            width: 140px;
+            height: auto;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .university {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            line-height: 1.2;
+        }
+
+        .department {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 35px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Buttons Structure */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Shimmer effect for buttons */
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-20deg);
+            transition: all 0.5s ease;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+        
+        .btn:hover::before {
+            left: 150%;
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+            width: 24px; /* fixed width to align text perfectly */
+        }
+        
+        /* Optional: Change icon colors on hover for a nice touch */
+        .btn:nth-child(1):hover i { color: #0077b5; } /* LinkedIn */
+        .btn:nth-child(2):hover i { color: #ffffff; } /* GitHub */
+        .btn:nth-child(3):hover i { color: #ea4335; } /* Contact (Email) */
+        .btn:nth-child(4):hover i { color: var(--primary-gold); } /* University */
+
+        .footer {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 10px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+            }
+            .name {
+                font-size: 1.6rem;
+            }
+            .university {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- University Logo -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Kahramanmara%C5%9F_%C4%B0stiklal_%C3%9Cniversitesi_Logosu.png/500px-Kahramanmara%C5%9F_%C4%B0stiklal_%C3%9Cniversitesi_Logosu.png" alt="Kahramanmaraş İstiklal Üniversitesi Logo" class="logo">
+        
+        <!-- Text Content -->
+        <div class="university">KAHRAMANMARAŞ İSTİKLAL ÜNİVERSİTESİ</div>
+        <h1 class="name">ÖMER ÇETİN YALMAN</h1>
+        <div class="department">Yazılım Mühendisliği Bölümü</div>
+        
+        <!-- Action Buttons -->
+        <div class="buttons">
+            <a href="#" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#" class="btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="#" class="btn"><i class="fas fa-university"></i> University Website</a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">© 2026 Ömer Çetin Yalman</div>
+    </div>
+</body>
+</html>
